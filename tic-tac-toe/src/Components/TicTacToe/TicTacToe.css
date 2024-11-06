@@ -1,0 +1,110 @@
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 60px;
+    color: rgb(62, 197, 243);
+}
+
+h2 {
+    font-size: 60px;
+    color: rgb(255, 97, 95);
+}
+
+h1,h2 {
+    display: inline;
+}
+
+.resetButton {
+    width: 200px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-color: rgb(97, 219, 252);
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    margin: auto 20px;
+}
+
+.modeButton {
+    width: 250px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-color: rgb(97, 219, 252);
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 cột có kích thước bằng nhau */
+    grid-template-rows: repeat(3, 1fr);
+    /* 3 hàng có kích thước bằng nhau */
+    gap: 10px;
+    /* Khoảng cách giữa các ô */
+    height: 500px;
+    width: 500px;
+    margin: 50px auto;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(46, 60, 89);
+    border: 4px solid rgb(33, 43, 63);
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0;
+    /* Xóa khoảng trắng trong ô nếu chưa có ảnh */
+}
+
+.box img {
+    width: 80%;
+    /* Đảm bảo ảnh vừa vặn trong ô */
+    height: 80%;
+    object-fit: contain;
+}
+
+.winnerMessage {
+
+    font-size: 35px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    /* Màu chữ trắng */
+    background-color: rgb(97, 219, 252);
+    /* Nền xanh nổi bật */
+    padding: 90px;
+    border-radius: 15px;
+    position: fixed;
+    /* Đảm bảo thông báo luôn hiển thị ở vị trí cố định */
+    top: 40%;
+    /* Đặt thông báo ở giữa trang theo chiều dọc */
+    left: 50%;
+    /* Đặt thông báo ở giữa trang theo chiều ngang */
+    transform: translate(-50%, -50%);
+    /* Điều chỉnh vị trí để thông báo chính giữa */
+    animation: glow 1s ease-in-out infinite alternate;
+    z-index: 9999;
+    /* Đảm bảo bảng thông báo nằm trên mọi thứ */
+}
+
+/* Hiệu ứng phát sáng */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px rgb(97, 219, 252), 0 0 20px rgb(97, 219, 252), 0 0 30px rgb(97, 219, 252);
+    }
+
+    to {
+        box-shadow: 0 0 20px rgb(97, 219, 252), 0 0 30px rgb(97, 219, 252), 0 0 40px rgb(97, 219, 252);
+    }
+}
